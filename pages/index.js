@@ -79,7 +79,7 @@ export default function PaginaInicial() {
                 styleSheet={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     backgroundColor: appConfig.theme.colors.primary[500],
-                    backgroundImage: 'url(https://i.ibb.co/R72HwfR/wallpaper.png)',
+                    backgroundImage: 'url(https://img-9gag-fun.9cache.com/photo/abppOWL_700bwp.webp)',
                     backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'//backgroundBlendMode: 'multiply', 
                 }}
             >
