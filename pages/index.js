@@ -1,4 +1,5 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components'
+import React from 'react';
 import appConfig from '../config.json';
 
 function GlobalStyle() {
@@ -70,7 +71,9 @@ function Title(props) {
 //   export default HomePage
   
 export default function PaginaInicial() {
-    const username = 'snowlzz';
+    // const username = 'snowlzz';
+    const [username, setUsername] = React.useState('snowlzz');
+    
 
     return (
         <>
@@ -79,8 +82,8 @@ export default function PaginaInicial() {
                 styleSheet={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     backgroundColor: appConfig.theme.colors.primary[500],
-                    backgroundImage: 'url(https://img-9gag-fun.9cache.com/photo/abppOWL_700bwp.webp)',
-                    backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'//backgroundBlendMode: 'multiply', 
+                    backgroundImage: 'url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3b4bbfd1-f084-41a9-930f-1de2b8fbdb5d/ddvwtyb-ff2e7a34-7f97-47e5-83ab-77004c243056.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNiNGJiZmQxLWYwODQtNDFhOS05MzBmLTFkZTJiOGZiZGI1ZFwvZGR2d3R5Yi1mZjJlN2EzNC03Zjk3LTQ3ZTUtODNhYi03NzAwNGMyNDMwNTYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.sbwlkdcUSFHzsXYYOUhQVX424LNlWmuA2mBnB3Yu-lQ)',
+                    backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', //backgroundBlendMode: 'multiply', 
                 }}
             >
                 <Box
@@ -95,7 +98,7 @@ export default function PaginaInicial() {
                         width: '100%', maxWidth: '700px',
                         borderRadius: '15px', padding: '32px', margin: '16px',
                         boxShadow: '0 2px 10px 0 rgb(0 0 0 / 10 0%)',
-                        backgroundColor: 'rgba(43,45,66, 0.9)',
+                        backgroundColor: 'rgba(43,45,66, 0.75)',
                     }}
                 >
                     {/* Formulário */}
@@ -110,8 +113,28 @@ export default function PaginaInicial() {
                         <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[700] }}>
                             {appConfig.name}
                         </Text>
+                        
+                        {/* <input
+                            type="text"
+                            value={username}
+                            onChange={function (event) {
+                                console.log('usuario digitou', event.target.value);
+                                //Onde ta o val?
+                                const valor = event.target.value                                
+                                //Trocar o valor da var
+                                setUsername(valor);
+                            }}
+                        /> */}
 
                         <TextField
+                            value={username}
+                            onChange={function (event) {
+                                console.log('usuario digitou', event.target.value);
+                                //Onde ta o val?
+                                const valor = event.target.value                                
+                                //Trocar o valor da var
+                                setUsername(valor);
+                            }}
                             fullWidth
                             textFieldColors={{
                                 neutral: {
@@ -163,8 +186,8 @@ export default function PaginaInicial() {
                         <Text
                             variant="body4"
                             styleSheet={{
-                                color: appConfig.theme.colors.neutrals[200],
-                                backgroundColor: appConfig.theme.colors.neutrals[900],
+                                color: appConfig.theme.colors.neutrals[500],
+                                backgroundColor: appConfig.theme.colors.primary['050'],
                                 padding: '3px 10px',
                                 borderRadius: '1000px'
                             }}
